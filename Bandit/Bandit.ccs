@@ -3,6 +3,15 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="Game">
+          <Folder Name="Pic">
+            <Image Name="blinkbg.png" />
+            <Image Name="normalbg.png" />
+          </Folder>
+          <Project Name="ButtonItem.csd" Type="Node" />
+          <Project Name="ElementItem.csd" Type="Node" />
+          <Project Name="GameLayer.csd" Type="Layer" />
+        </Folder>
         <Image Name="HelloWorld.png" />
         <Project Name="MainScene.csd" Type="Scene" />
       </RootFolder>
