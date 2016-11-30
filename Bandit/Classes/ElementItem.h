@@ -20,6 +20,7 @@ private:
 	void initObject();
 	void destoryObject();
 public:
+	void run(std::function<void()> func = nullptr);
 	void changeElementSeclted(bool seclted);
 public: // index ฯเนุ
 	inline ElementItemData getElementItemData(){ return m_element_data; }

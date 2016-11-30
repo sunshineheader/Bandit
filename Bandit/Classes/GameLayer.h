@@ -2,9 +2,24 @@
 #define __GAME__LAYER__H__H__
 #include "BaseLayer.h"
 
+enum GameState
+{
+	START_GAME,
+	START_ANIMATION,
+};
+
+static int GrailElement0 = 20;
+static int GrailElement1 = 35;
+static int GrailElement2 = 50;
+static int GrailElement3 = 65;
+static int GrailElement4 = 75;
+static int GrailElement5 = 85;
+static int GrailElement6 = 90;
+static int GrailElement7 = 95;
+static int GrailElement8 = 100;
+
 class ElementItem;
 class ButtonItem;
-
 class GameLayer :public BaseLayer
 {
 public:
@@ -22,6 +37,17 @@ private:
 	void doMiddleBtns(Node* rootNode);
 	// µ×ÏÂ8¸ö°´Å¥
 	void doButtomBtns(Node* rootNode);
+private:
+	void reset();
+	int  checkIndex(int index);
+	void checkStepByStep();
+	int  checkGrailElementStep();
+	void checkElementStep(int grailelement);
+	int  checkEndedElementIndex();
+	bool checkButtonItemClick();
+private:
+	void startRun(float delta);
+	void startAddSpeed(float delta);
 private: // calbacks
 	void goBtnCallBack(Ref* psender);
 	void bigBtnCallBack(Ref* psender);
@@ -35,9 +61,12 @@ private:
 	Text* winText;
 	Text* creditText;
 	ElementItem* elements[24];
-	Vector<ButtonItem*>buttonItemPool;
+	ButtonItem * buttons[8];
+	Vector<ElementItem*> elementHitPool;
 private:
-
+	GameState gameState;
+	int currIndex;
+	int repeatCount;
 };
 #endif
 

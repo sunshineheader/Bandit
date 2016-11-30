@@ -44,6 +44,10 @@ void ElementItem::changeElementSeclted(bool seclted)
 {
 	blinkImage->setVisible(seclted);
 }
+void ElementItem::run(std::function<void()> func)
+{
+	blinkImage->setVisible(true);
+}
 
 void ElementItem::setPositionByIndex(int index)
 {
